@@ -1,9 +1,8 @@
-'''
+"""
 read_map is used to read in maps using the osgeo - gdal module, which requires installation. This allows python to 
 interpret GIS file format data such as raster or ascii, and store these arrays
-'''
+"""
 
-# Modules
 from osgeo import gdal
 import sys
 import numpy as np
