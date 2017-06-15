@@ -55,5 +55,5 @@ def mwu_test(max_d, luc, transition_dictionary, baseline_dictionary, N):
                 sigma = ((((n1*n2)/12))*((n + 1) - t_sum))**0.5
                 if sigma > 0:
                     z = (U - mu)/sigma
-                    mwu_z_score[c,p,q] = z
+                    mwu_z_score[c, p, q] = z
     return mwu_z_score

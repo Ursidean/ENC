@@ -6,7 +6,7 @@ Natural areas,Agricultural areas,0,0,0,5
 Natural areas,Residential,0,0,0,5
 Natural areas,Industry & commerce,0,0,0,5
 Natural areas,Recreation areas,0,0,0,5
-Natural areas,Forest,20,10,1,5
+Natural areas,Forest,20,5,0.5,5
 Arable land,Arable land,500,20,2,5
 Arable land,Permanent crops,50,2,0.2,5
 Arable land,Pastures,50,2,0.2,5
@@ -16,24 +16,24 @@ Arable land,Industry & commerce,50,2,0.2,5
 Arable land,Recreation areas,50,2,0.2,4
 Arable land,Forest,20,0,0,5
 Permanent crops,Arable land,50,10,1,5
-Permanent crops,Permanent crops,500,100,10,5
+Permanent crops,Permanent crops,500,50,5,5
 Permanent crops,Pastures,0,2,0.2,5
 Permanent crops,Agricultural areas,0,0,0,5
 Permanent crops,Residential,5,2,0.2,5
 Permanent crops,Industry & commerce,0,0,0,5
-Permanent crops,Recreation areas,20,5,0.5,5
+Permanent crops,Recreation areas,20,2,0.2,5
 Permanent crops,Forest,0,0,0,5
 Pastures,Arable land,20,2,0.2,5
 Pastures,Permanent crops,0,0,0,5
 Pastures,Pastures,800,20,2,5
-Pastures,Agricultural areas,20,5,0.2,5
+Pastures,Agricultural areas,20,2,0.2,5
 Pastures,Residential,5,0,0,5
 Pastures,Industry & commerce,0,0,0,5
 Pastures,Recreation areas,0,0,0,5
 Pastures,Forest,5,0,0,5
 Agricultural areas,Arable land,5,2,0.2,5
 Agricultural areas,Permanent crops,0,2,0.2,5
-Agricultural areas,Pastures,5,5,0.5,5
+Agricultural areas,Pastures,5,2,0.2,5
 Agricultural areas,Agricultural areas,500,20,2,5
 Agricultural areas,Residential,0,2,0.2,5
 Agricultural areas,Industry & commerce,0,2,0.2,5
@@ -52,7 +52,7 @@ Industry & commerce,Permanent crops,0,0,0,5
 Industry & commerce,Pastures,0,0,0,5
 Industry & commerce,Agricultural areas,0,0,0,5
 Industry & commerce,Residential,0,0,0,5
-Industry & commerce,Industry & commerce,1000,50,5,5
+Industry & commerce,Industry & commerce,1000,20,2,5
 Industry & commerce,Recreation areas,0,0,0,5
 Industry & commerce,Forest,0,0,0,5
 Recreation areas,Arable land,0,0,0,5
@@ -61,7 +61,7 @@ Recreation areas,Pastures,0,0,0,5
 Recreation areas,Agricultural areas,0,0,0,5
 Recreation areas,Residential,0,2,0.2,5
 Recreation areas,Industry & commerce,0,0,0,5
-Recreation areas,Recreation areas,1000,50,5,5
+Recreation areas,Recreation areas,1000,20,2,5
 Recreation areas,Forest,0,0,0,5
 Forest,Arable land,0,0,0,5
 Forest,Permanent crops,0,0,0,5
@@ -88,7 +88,7 @@ Seaports,Industry & commerce,0,0,0,5
 Seaports,Recreation areas,0,0,0,5
 Seaports,Forest,0,0,0,5
 Airports,Arable land,0,0,0,5
-Airports,Permanent crops,0,5,0.5,5
+Airports,Permanent crops,0,2,0.2,5
 Airports,Pastures,0,0,0,5
 Airports,Agricultural areas,0,0,0,5
 Airports,Residential,0,0,0,5
@@ -102,7 +102,7 @@ Mine & dump sites,Agricultural areas,0,0,0,5
 Mine & dump sites,Residential,0,0,0,5
 Mine & dump sites,Industry & commerce,0,0,0,5
 Mine & dump sites,Recreation areas,0,0,0,5
-Mine & dump sites,Forest,0,5,0.5,5
+Mine & dump sites,Forest,0,2,0.2,5
 Fresh water,Arable land,0,0,0,5
 Fresh water,Permanent crops,0,0,0,5
 Fresh water,Pastures,0,0,0,5

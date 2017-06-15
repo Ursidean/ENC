@@ -1,15 +1,130 @@
 """
-This component of the Empirical Neighbourhood Calibration method sets the initial
-neighbourhood rule values
+The Neighbourhood rule initializer package is used to evaluate the observed enrichment of neighbourhood composition
+of the input data, extract the meaningful over-representation present, and use this information to determine
+an initial set of neighbourhood rule parameters for a White et al. (1993) type, Cellular Automata
+land-use model that uses a transition potential for the allocation of land-use changes.
 """
+
 import gdal
 import numpy as np
-import csv
 import math
 from considered_distances import considered_distances
-from enrichment_factor import ef
+from neighbourhood_evaluator import neighbourhood_evaluator
+from mwu_test import mwu_test
 from contingency_table import contingency_table
+import csv
 
+
+# Example case study set-up.
+# Specify the base path to the directory containing the empirical neighbourhood
+# calibration tool-pack.
+base_path = "C:\\ENC\\"
+# Select an example case study application. Specify the name below:
+case_study = "Berlin"
+# Set the paths to the directories and relevant data
+data_path = base_path + "Example_case_study_data\\"
+output_path = base_path + "Example_case_study_output\\"
+map1_path = data_path + case_study + "\\" + case_study.lower() + "_1990.asc"
+map2_path = data_path + case_study + "\\" + case_study.lower() + "_2000.asc"
+mask_path = data_path + case_study + "\\" + case_study.lower() + "_mask.asc"
+# Set the land-use class names.
+luc_names = ["Natural areas", "Arable land", "Permanent crops", "Pastures",
+             "Agricultural areas", "Residential", "Industry & commerce",
+             "Recreation areas", "Forest", "Road & rail", "Seaports",
+             "Airports", "Mine & dump sites", "Fresh water", "Marine water"]
+# Set the land-use class parameters, the number of: land-use classes, passive land-uses,
+# feature land-uses, and active land-uses.
+luc = len(luc_names)
+pas = 1
+fea = 6
+act = luc - (pas + fea)
+# Specify the maximum neighbourhood size distance considered
+max_distance = 5
+
+# Read in the map for the data at time slice 1.
+src_map = gdal.Open(map1_path)
+omap = np.array(src_map.GetRasterBand(1).ReadAsArray())
+# Read in the map for the data at time slice 2.
+src_map = gdal.Open(map2_path)
+amap = np.array(src_map.GetRasterBand(1).ReadAsArray())
+# Read in the masking map.
+src_map = gdal.Open(mask_path)
+mask = np.array(src_map.GetRasterBand(1).ReadAsArray())
+
+# Analyse the input maps for evaluation purposes
+map_dimensions = np.shape(omap)
+rows = map_dimensions[0]
+cols = map_dimensions[1]
+
+# Determine the distances that will be analysed,
+# use module: considered_distances.
+temp = considered_distances(max_distance)
+# Store the list of considered distances as a variable.
+cd = temp[0]
+# Store the total number of distances considered
+cdl = temp[1]
+# Determine the maximum neighbourhood size (unit) from considered distances
+N_all = [1, 8, 12, 16, 32, 28, 40, 40, 20]
+N = []
+for c in range(0, max_distance):
+    N.append(N_all[c])
+
+# Generate the contingency table using the module, 'contingency_table'
+cont_table = contingency_table(omap, amap, mask, luc, rows, cols)
+
+# Conduct the significance testing using the module 'neighbourhood_evaluator.'
+dummy = neighbourhood_evaluator(
+    luc, max_distance, cdl, cd, N, omap, amap, mask, rows, cols
+)
+# Store the requisite output into specific dictionaries
+all_cells_baseline = dummy[0]
+no_new_cells_ci_baseline = dummy[1]
+no_cells_ci_baseline = dummy[2]
+transition_dictionary = dummy[3]
+ef = dummy[4]
+# Log scale the enrichment factor values.
+log_data_ef = np.zeros(shape=(max_distance, luc, luc))
+for p in range(0, luc):
+    for q in range(0, luc):
+        for c in range(0, max_distance):
+            # If the enrichment factor is not evaluated a value of 0 is given.
+            # Hence, a did not evaluate value of -9999 is used.
+            if ef[c, p, q] == 0:
+                log_data_ef[c, p, q] = -9999
+            else:
+                log_data_ef[c, p, q] = math.log(ef[c, p, q], 10)
+
+# Specify what the significance limit is (recommended value is 1.96 i.e. 95%).
+z_limit = 1.96
+# Conduct the MWU test using the module 'mwu_test.'
+z_scores = mwu_test(
+    max_distance, luc, transition_dictionary, all_cells_baseline, N
+)
+
+# Determine which rules have meaningful over-representation at nearby distances.
+sig_distances = np.zeros(shape=(act, luc))
+c = 1
+for i in range(0, act):
+    for j in range(0, luc):
+        if abs(z_scores[c, i+pas, j]) > z_limit and log_data_ef[c, i+pas, j] > 0:
+            sig_distances[i, j] = sig_distances[i, j] + 1
+c = 2
+for i in range(0, act):
+    for j in range(0, luc):
+        if abs(z_scores[c, i + pas, j]) > z_limit and log_data_ef[c, i+pas, j] > 0:
+            sig_distances[i, j] = sig_distances[i, j] + 1
+att_rules = np.zeros(shape=(act, luc))
+for i in range(0, act):
+    for j in range(0, luc):
+        if i + pas == j:
+            att_rules[i, j] = 1
+        elif sig_distances[i, j] > 1:
+            att_rules[i, j] = 1
+att_rules = np.transpose(att_rules)
+
+# Save the attraction rules to a file.
+att_rules_file_path = output_path + case_study + "\\Rules\\att_rules.txt"
+np.savetxt(att_rules_file_path, att_rules, fmt="%d")
 
 # Specify the initialisation settings.
 # Specify the enrichment factor band levels, for setting the tail values.
@@ -46,75 +161,6 @@ d1_low_co_value = 2
 d2_high_co_value = 1
 d2_mid_co_value = 0.5
 d2_low_co_value = 0.2
-
-# Specify the base path to the directory containing the empirical neighbourhood
-# calibration tool-pack.
-base_path = "C:\\ENC\\"
-# Select an example case study application. Specify the name below:
-case_study = "Rome"
-# Set the paths to the directories and relevant data
-data_path = base_path + "Example_case_study_data\\"
-output_path = base_path + "Example_case_study_output\\"
-map1_path = data_path + case_study + "\\" + case_study.lower() + "_1990.asc"
-map2_path = data_path + case_study + "\\" + case_study.lower() + "_2000.asc"
-mask_path = data_path + case_study + "\\" + case_study.lower() + "_mask.asc"
-# Set the land-use class names.
-luc_names = ["Natural areas", "Arable land", "Permanent crops", "Pastures",
-             "Agricultural areas", "Residential", "Industry & commerce",
-             "Recreation areas", "Forest", "Road & rail", "Seaports",
-             "Airports", "Mine & dump sites", "Fresh water", "Marine water"]
-# Set the land-use class parameters: number of land-use classes, passive,
-# feature, and active.
-luc = len(luc_names)
-pas = 1
-fea = 6
-act = luc - (pas + fea)
-# Specify the maximum neighbourhood size distance considered
-max_distance = 5
-
-# Read in the map for the data at time slice 1.
-src_map = gdal.Open(map1_path)
-omap = np.array(src_map.GetRasterBand(1).ReadAsArray())
-# Read in the map for the data at time slice 2.
-src_map = gdal.Open(map2_path)
-amap = np.array(src_map.GetRasterBand(1).ReadAsArray())
-# Read in the masking map.
-src_map = gdal.Open(mask_path)
-mask = np.array(src_map.GetRasterBand(1).ReadAsArray())
-
-# Analyse the input maps for evaluation purposes
-map_dimensions = np.shape(omap)
-rows = map_dimensions[0]
-cols = map_dimensions[1]
-
-# Determine the distances that will be analysed,
-# use module: considered_distances.
-
-temp = considered_distances(max_distance)
-# Store the list of considered distances as a variable.
-cd = temp[0]
-# Store the total number of distances considered
-cdl = temp[1]
-# Determine the maximum neighbourhood size (unit) from considered distances
-N_all = [1, 8, 12, 16, 32, 28, 40, 40, 20]
-N = []
-for c in range(0, max_distance):
-    N.append(N_all[c])
-
-# Calculate the enrichment factor values for the data for initialisation setting,
-# using the module, 'ef'.
-data_ef = ef(luc, max_distance, cdl, cd, N, omap, amap, mask, rows, cols)
-# Log scale the enrichmet factor values
-log_data_ef = np.zeros(shape =(max_distance, luc, luc))
-for p in range(0, luc):
-    for q in range(0, luc):
-        for c in range(0, max_distance):
-            if data_ef[c, p, q] == 0:
-                log_data_ef[c, p, q] = -9999
-            else:
-                log_data_ef[c, p, q] = math.log(data_ef[c, p, q], 10)
-# Generate the contingency table using the module, 'contingency_table'
-cont_table = contingency_table(omap, amap, mask, luc, rows, cols)
 
 # Generate the initial rule set by evaluating the contingency table and enrichment
 # factor values. Store the rules in a dictionary, indexed as from ... to ...
@@ -240,3 +286,5 @@ with open(initial_rules_file, "wb") as csv_file:
             store[4] = rules[key][2]
             store[5] = rules[key][3]
             writer.writerow(store)
+
+# Initialisation completed. Rules ready for testing.

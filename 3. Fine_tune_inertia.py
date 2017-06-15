@@ -16,7 +16,7 @@ from log_scale_ef import log_scale_ef
 # neighbourhood calibration tool-pack.
 base_path = "C:\\ENC\\"
 # Select an example case study application. Specify the name below:
-case_study = "Budapest"
+case_study = "Rome"
 # Set the paths to the relevant directories
 data_path = base_path + "Example_case_study_data\\"
 output_path = base_path + "Example_case_study_output\\"

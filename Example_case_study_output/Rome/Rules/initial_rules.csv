@@ -15,7 +15,7 @@ Arable land,Residential,50,2,0.2,5
 Arable land,Industry & commerce,50,2,0.2,5
 Arable land,Recreation areas,0,0,0,5
 Arable land,Forest,0,0,0,5
-Permanent crops,Arable land,50,5,0.2,5
+Permanent crops,Arable land,50,2,0.2,5
 Permanent crops,Permanent crops,500,20,2,4
 Permanent crops,Pastures,0,0,0,5
 Permanent crops,Agricultural areas,20,0,0,5
@@ -26,7 +26,7 @@ Permanent crops,Forest,0,0,0,5
 Pastures,Arable land,0,0,0,5
 Pastures,Permanent crops,0,0,0,5
 Pastures,Pastures,500,20,2,5
-Pastures,Agricultural areas,20,10,0.5,5
+Pastures,Agricultural areas,20,5,0.2,5
 Pastures,Residential,0,0,0,5
 Pastures,Industry & commerce,0,0,0,5
 Pastures,Recreation areas,0,0,0,5
@@ -43,7 +43,7 @@ Residential,Arable land,0,0,0,5
 Residential,Permanent crops,0,0,0,5
 Residential,Pastures,0,0,0,5
 Residential,Agricultural areas,0,2,0.2,5
-Residential,Residential,1000,20,5,5
+Residential,Residential,1000,20,2,5
 Residential,Industry & commerce,5,2,0.2,5
 Residential,Recreation areas,0,0,0,5
 Residential,Forest,0,0,0,5
@@ -52,7 +52,7 @@ Industry & commerce,Permanent crops,0,0,0,5
 Industry & commerce,Pastures,0,0,0,5
 Industry & commerce,Agricultural areas,0,0,0,5
 Industry & commerce,Residential,0,0,0,5
-Industry & commerce,Industry & commerce,1000,100,10,5
+Industry & commerce,Industry & commerce,1000,50,5,5
 Industry & commerce,Recreation areas,0,0,0,5
 Industry & commerce,Forest,0,0,0,5
 Recreation areas,Arable land,0,0,0,5

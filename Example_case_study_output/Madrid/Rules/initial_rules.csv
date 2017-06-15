@@ -16,7 +16,7 @@ Arable land,Industry & commerce,50,2,0.2,5
 Arable land,Recreation areas,20,0,0,5
 Arable land,Forest,5,0,0,5
 Permanent crops,Arable land,5,0,0,5
-Permanent crops,Permanent crops,500,50,5,5
+Permanent crops,Permanent crops,500,20,2,5
 Permanent crops,Pastures,0,0,0,5
 Permanent crops,Agricultural areas,0,0,0,5
 Permanent crops,Residential,0,0,0,5
@@ -43,16 +43,16 @@ Residential,Arable land,0,0,0,5
 Residential,Permanent crops,0,0,0,5
 Residential,Pastures,0,0,0,5
 Residential,Agricultural areas,0,0,0,5
-Residential,Residential,1000,20,5,5
+Residential,Residential,1000,20,2,5
 Residential,Industry & commerce,5,2,0.2,5
-Residential,Recreation areas,5,2,0.5,5
+Residential,Recreation areas,5,2,0.2,5
 Residential,Forest,0,0,0,5
 Industry & commerce,Arable land,5,2,0.2,4
 Industry & commerce,Permanent crops,0,0,0,5
 Industry & commerce,Pastures,0,0,0,5
 Industry & commerce,Agricultural areas,0,0,0,5
 Industry & commerce,Residential,0,2,0.2,5
-Industry & commerce,Industry & commerce,1000,50,5,5
+Industry & commerce,Industry & commerce,1000,20,2,5
 Industry & commerce,Recreation areas,0,2,0.2,5
 Industry & commerce,Forest,0,0,0,5
 Recreation areas,Arable land,0,0,0,5
@@ -61,7 +61,7 @@ Recreation areas,Pastures,0,0,0,5
 Recreation areas,Agricultural areas,0,0,0,5
 Recreation areas,Residential,0,2,0.2,5
 Recreation areas,Industry & commerce,0,0,0,5
-Recreation areas,Recreation areas,800,50,10,5
+Recreation areas,Recreation areas,800,20,5,5
 Recreation areas,Forest,0,0,0,5
 Forest,Arable land,5,0,0,5
 Forest,Permanent crops,0,0,0,5
@@ -96,12 +96,12 @@ Airports,Industry & commerce,0,2,0.2,5
 Airports,Recreation areas,0,0,0,5
 Airports,Forest,0,0,0,5
 Mine & dump sites,Arable land,0,0,0,5
-Mine & dump sites,Permanent crops,0,2,0.5,5
+Mine & dump sites,Permanent crops,0,2,0.2,5
 Mine & dump sites,Pastures,0,0,0,5
 Mine & dump sites,Agricultural areas,0,0,0,5
 Mine & dump sites,Residential,0,2,0.2,5
-Mine & dump sites,Industry & commerce,0,5,0.5,5
-Mine & dump sites,Recreation areas,5,10,1,5
+Mine & dump sites,Industry & commerce,0,2,0.2,5
+Mine & dump sites,Recreation areas,5,5,0.5,5
 Mine & dump sites,Forest,0,0,0,5
 Fresh water,Arable land,0,0,0,5
 Fresh water,Permanent crops,0,0,0,5

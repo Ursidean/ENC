@@ -13,7 +13,7 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
         for q in range(0, luc):
             for c in range(0, max_d):
                 key = "c-" + str(p) + "|n-" + str(q) + "|d-" + str(c)
-                value = [0]*(1+ N[c])
+                value = [0]*(1 + N[c])
                 transition_dictionary[key] = value
     # Initialise a dictionary to store the sum of enrichments for
     # neighbourhood analysis
@@ -52,10 +52,10 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
                         if c == 0:
                             x = i
                             y = j
-                            if mask[x,y] == 0:
+                            if mask[x, y] == 0:
                                 pass
                             else:
-                                float_store_count[omap[x,y],0] = (
+                                float_store_count[omap[x, y],0] = (
                                     float_store_count[omap[x, y], 0] + 1
                                 )
                         # Analyse the surrounding neighbourhood.
@@ -69,14 +69,14 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
                                         pass
                                     elif y >= col:
                                         pass
-                                    elif mask [x,y] == 0:
+                                    elif mask[x, y] == 0:
                                         pass
                                     else:
                                         idx = ((x - i)**2 + (y - j)**2)**0.5
-                                        for e in range(0,cdl):
+                                        for e in range(0, cdl):
                                             if idx == cd[e]:
-                                                float_store_count[omap[x,y],e] = (
-                                                    float_store_count[omap[x,y],e]
+                                                float_store_count[omap[x, y], e] = (
+                                                    float_store_count[omap[x, y], e]
                                                     + 1
                                                 )
                             x = i + c
@@ -107,7 +107,7 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
                                         pass
                                     elif x >= row:
                                         pass
-                                    elif mask[x,y] == 0:
+                                    elif mask[x, y] == 0:
                                         pass
                                     else:
                                         idx = ((x - i) ** 2 + (y - j) ** 2) ** 0.5
@@ -142,17 +142,17 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
                     neighbourhood_size = [0]*max_d
                     for p in range(0, luc):
                         for c in range(0, cdl):
-                            if float_store_count[p,c] > 0:
+                            if float_store_count[p, c] > 0:
                                 for e in range(0, max_d):
                                     x = cd[c]
                                     if (e - 0.5) < x < (e + 0.5):
-                                        float_store_aggregated[p,e] = (
-                                            float_store_aggregated[p,e] +
+                                        float_store_aggregated[p, e] = (
+                                            float_store_aggregated[p, e] +
                                             float_store_count[p, c]
                                         )
                                         neighbourhood_size[e] = (
                                             neighbourhood_size[e] +
-                                            float_store_count[p,c]
+                                            float_store_count[p, c]
                                         )
                     # Convert the float stored to a proportion for processing.
                     fsa_proportion = np.zeros(shape=(luc, max_d))
@@ -171,7 +171,7 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
                     for p in range(0, luc):
                         for c in range(0, max_d):
                             ef_sum[c, central, p] = (
-                                ef_sum[c, central, p] + fsa_proportion[p,c]
+                                ef_sum[c, central, p] + fsa_proportion[p, c]
                             )
                             key = (
                                 "c-" + str(central) + "|n-" + str(p) + "|d-" +
@@ -180,7 +180,7 @@ def ef(luc, max_d, cdl, cd, N, omap, amap, mask, row, col):
                             for a in range(0, N[c] + 1):
                                 lower_bound = float(a)/float(N[c]) - (0.5/N[c])
                                 upper_bound = float(a)/float(N[c]) + (0.5/N[c])
-                                if lower_bound < fsa_proportion[p,c] < upper_bound:
+                                if lower_bound < fsa_proportion[p, c] < upper_bound:
                                     transition_dictionary[key][a] = (
                                         transition_dictionary[key][a] + 1
                                     )
