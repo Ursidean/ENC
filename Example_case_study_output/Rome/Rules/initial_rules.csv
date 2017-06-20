@@ -6,19 +6,19 @@ Natural areas,Agricultural areas,0,0,0,5
 Natural areas,Residential,0,0,0,5
 Natural areas,Industry & commerce,0,0,0,5
 Natural areas,Recreation areas,0,0,0,5
-Natural areas,Forest,50,2,0.2,5
+Natural areas,Forest,20,2,0.2,5
 Arable land,Arable land,500,20,2,5
-Arable land,Permanent crops,50,2,0.2,5
+Arable land,Permanent crops,20,2,0.2,5
 Arable land,Pastures,0,0,0,5
-Arable land,Agricultural areas,50,2,0.2,5
-Arable land,Residential,50,2,0.2,5
-Arable land,Industry & commerce,50,2,0.2,5
+Arable land,Agricultural areas,20,2,0.2,5
+Arable land,Residential,20,2,0.2,5
+Arable land,Industry & commerce,20,2,0.2,5
 Arable land,Recreation areas,0,0,0,5
 Arable land,Forest,0,0,0,5
-Permanent crops,Arable land,50,2,0.2,5
+Permanent crops,Arable land,20,2,0.2,5
 Permanent crops,Permanent crops,500,20,2,4
 Permanent crops,Pastures,0,0,0,5
-Permanent crops,Agricultural areas,20,0,0,5
+Permanent crops,Agricultural areas,10,0,0,5
 Permanent crops,Residential,5,0,0,5
 Permanent crops,Industry & commerce,0,0,0,5
 Permanent crops,Recreation areas,0,0,0,5
@@ -26,19 +26,19 @@ Permanent crops,Forest,0,0,0,5
 Pastures,Arable land,0,0,0,5
 Pastures,Permanent crops,0,0,0,5
 Pastures,Pastures,500,20,2,5
-Pastures,Agricultural areas,20,5,0.2,5
+Pastures,Agricultural areas,10,5,0.2,5
 Pastures,Residential,0,0,0,5
 Pastures,Industry & commerce,0,0,0,5
 Pastures,Recreation areas,0,0,0,5
 Pastures,Forest,0,0,0,5
-Agricultural areas,Arable land,20,0,0,5
+Agricultural areas,Arable land,10,0,0,5
 Agricultural areas,Permanent crops,0,0,0,5
 Agricultural areas,Pastures,0,0,0,5
 Agricultural areas,Agricultural areas,1000,20,2,5
-Agricultural areas,Residential,20,0,0,5
-Agricultural areas,Industry & commerce,20,0,0,5
+Agricultural areas,Residential,10,0,0,5
+Agricultural areas,Industry & commerce,10,0,0,5
 Agricultural areas,Recreation areas,0,0,0,5
-Agricultural areas,Forest,20,0,0,5
+Agricultural areas,Forest,10,0,0,5
 Residential,Arable land,0,0,0,5
 Residential,Permanent crops,0,0,0,5
 Residential,Pastures,0,0,0,5

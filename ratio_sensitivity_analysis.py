@@ -18,7 +18,7 @@ import csv
 
 # Specify the base path to the directory containing the empirical neighbourhood
 # calibration tool-pack.
-base_path = "C:\\ENC\\"
+base_path = "C:\\Users\\charl\\OneDrive\\Documents\\ENC\\"
 # Specify the command line version of Geonamica.
 geo_cmd = "C:\\Program Files (x86)\\Geonamica\\Metronamica\\GeonamicaCmd.exe"
 # Set the land-use class names.
@@ -47,7 +47,7 @@ for c in range(0, max_distance):
     N.append(N_all[c])
 # Specify the fine-tuning calibration method parameters, the base random seed, the
 # maximum number of simulation runs, and the golden section search tolerance.
-max_runs = 10
+max_runs = 5
 base_seed = 1000
 # Specify the log files.
 log_file_2000 = base_path + "LogSettings.xml"
@@ -61,97 +61,140 @@ mid_inertia_band = 0.90
 # The conversion band levels, for setting conversion values.
 high_conversion_band = 0.5
 mid_conversion_band = 0.1
-low_conversion_band = 0.02
+low_conversion_band = 0.025
 # The enrichment factor band levels, for setting the tail values.
 high_ef = 1.0
 mid_ef = 0.5
 
 # Specify the Inertia values.
-high_inertia = 1000
-mid_inertia = 750
-low_inertia = 500
+high_inertia = 1000.0
+mid_inertia = 500.0
+low_inertia = 250.0
 # Specify the fixed transformation parameters.
-#theta_cp = 0.1
-theta_i1 = 0.1
-theta_i2 = 0.01
-theta_c1 = 0.01
-theta_c2 = 0.001
+"""
+theta_cp = 0.025
+"""
+theta_i1 = 0.05
+theta_i2 = theta_i1*0.1
+theta_c1 = 0.005
+theta_c2 = theta_c1*0.1
 
-# Specify the variable transformation parameter range.
+# Calculate all relevant parameter values.
+# Set the conversion parameter values.
+"""
+high_conversion = high_inertia * theta_cp
+mid_conversion = mid_inertia * theta_cp
+low_conversion = low_inertia * theta_cp
+"""
+# Set the distance 1 tail values for self-influence rules.
+d1_high_si_value = high_inertia * theta_i1
+d1_mid_si_value = mid_inertia * theta_i1
+d1_low_si_value = low_inertia * theta_i1
+# Set the distance 2 tail values for self-influence rules.
+d2_high_si_value = high_inertia * theta_i2
+d2_mid_si_value = mid_inertia * theta_i2
+d2_low_si_value = low_inertia * theta_i2
 
-varied_parameter = "theta_cp"
-low_bound = 0.05
-high_bound = 0.07
-step_size = 0.01
-for a in range(low_bound, high_bound, step_size):
-    # Set the variable parameter value. This will change depending on what is tested.
-    theta_cp = float(a)
-    print theta_cp
-    # Calculate all relevant parameter values.
-    # Set the conversion parameter values.
-    high_conversion = high_inertia * theta_cp
-    mid_conversion = mid_inertia*theta_cp
-    low_conversion = low_inertia*theta_cp
-    # Set the distance 1 tail values for self-influence rules.
-    d1_high_si_value = high_inertia*theta_i1
-    d1_mid_si_value = mid_inertia*theta_i1
-    d1_low_si_value = low_inertia*theta_i1
-    # Set the distance 2 tail values for self-influence rules.
-    d2_high_si_value = high_inertia*theta_i2
-    d2_mid_si_value = mid_inertia*theta_i2
-    d2_low_si_value = low_inertia*theta_i2
-    # Set the distance 1 tail values for interaction rules.
-    d1_high_co_value = high_inertia*theta_c1
-    d1_mid_co_value = mid_inertia*theta_c1
-    d1_low_co_value = low_inertia*theta_c1
-    # Set the distance 2 tail value for interation rules.
-    d2_high_co_value = high_inertia*theta_c2
-    d2_mid_co_value = mid_inertia*theta_c2
-    d2_low_co_value = low_inertia*theta_c2
+# Set the distance 1 tail values for interaction rules.
+d1_high_co_value = high_inertia * theta_c1
+d1_mid_co_value = mid_inertia * theta_c1
+d1_low_co_value = low_inertia * theta_c1
+# Set the distance 2 tail value for interaction rules.
+d2_high_co_value = high_inertia * theta_c2
+d2_mid_co_value = mid_inertia * theta_c2
+d2_low_co_value = low_inertia * theta_c2
 
-    # The metrics are stored in a dictionary to account for variable number
-    # of runs.
-    metrics = {}
+# Initialise a dictionary to store the metrics calculated.
+metrics = {}
 
-    # Specify a list of case studies to analyse
-    case_studies = ["Berlin","Budapest","Madrid","Rome"]
-    for b in range(0, len(case_studies)):
-        # Specify the selected case study.
-        case_study = case_studies[b]
-        # Set the paths to the directories and relevant data
-        data_path = base_path + "Example_case_study_data\\"
-        output_path = base_path + "Example_case_study_output\\"
-        map1_path = data_path + case_study + "\\" + case_study.lower() + "_1990.asc"
-        map2_path = data_path + case_study + "\\" + case_study.lower() + "_2000.asc"
-        map3_path = data_path + case_study + "\\" + case_study.lower() + "_2006.asc"
-        mask_path = data_path + case_study + "\\" + case_study.lower() + "_mask.asc"
-        # Specify the working directory, the folder containing the Metronamica
-        # project file.
-        working_directory_2000 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                                  + case_study + "\\")
-        working_directory_2006 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                                  + case_study + "_2006\\")
-        # Specify the project file names.
-        project_file_2000 = working_directory_2000 + case_study + ".geoproj"
-        project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
+# Specify a list of case studies to analyse.
+case_studies = ["Berlin"]#, "Budapest", "Madrid", "Rome"]
 
-        # Specify the paths to the simulated output maps.
-        smap_path_2000 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                          + case_study + "\\Log\\Land_use\\"
-                                         "Land use map_2000-Jan-01 00_00_00.rst")
-        smap_path_2006 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                          + case_study + "_2006\\Log\\Land_use\\"
-                                         "Land use map_2006-Jan-01 00_00_00.rst")
+# Iterate through the case studies for testing.
+for a in range(0, len(case_studies)):
+    # Specify the selected case study.
+    case_study = case_studies[a]
+    # Terminal feedback to user.
+    print "Testing case study: " + case_study
+    # Set the paths to the directories and relevant data
+    data_path = base_path + "Example_case_study_data\\"
+    output_path = base_path + "Example_case_study_output\\"
+    map1_path = data_path + case_study + "\\" + case_study.lower() + "_1990.asc"
+    map2_path = data_path + case_study + "\\" + case_study.lower() + "_2000.asc"
+    map3_path = data_path + case_study + "\\" + case_study.lower() + "_2006.asc"
+    mask_path = data_path + case_study + "\\" + case_study.lower() + "_mask.asc"
+    # Specify the working directory, the folder containing the Metronamica
+    # project file.
+    working_directory_2000 = ("C:\\Users\\charl\\OneDrive\\Documents"
+                              "\\Geonamica\\Metronamica\\"
+                              + case_study + "\\")
+    working_directory_2006 = ("C:\\Users\\charl\\OneDrive\\Documents"
+                              "\\Geonamica\\Metronamica\\"
+                              + case_study + "_2006\\")
+    # Specify the project file names.
+    project_file_2000 = working_directory_2000 + case_study + ".geoproj"
+    project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
 
-        # Read in the data maps and mask.
-        map1 = read_map(map1_path)
-        map2 = read_map(map2_path)
-        map3 = read_map(map3_path)
-        mask = read_map(mask_path)
-        # Analyse the input maps for evaluation purposes
-        map_dimensions = np.shape(map1)
-        rows = map_dimensions[0]
-        cols = map_dimensions[1]
+    # Specify the paths to the simulated output maps.
+    smap_path_2000 = ("C:\\Users\\charl\\OneDrive\\Documents"
+                      "\\Geonamica\\Metronamica\\"
+                      + case_study + "\\Log\\Land_use\\"
+                      "Land use map_2000-Jan-01 00_00_00.rst")
+    smap_path_2006 = ("C:\\Users\\charl\\OneDrive\\Documents"
+                      "\\Geonamica\\Metronamica\\"
+                      + case_study + "_2006\\Log\\Land_use\\"
+                      "Land use map_2006-Jan-01 00_00_00.rst")
+
+    # Read in the data maps and mask.
+    map1 = read_map(map1_path)
+    map2 = read_map(map2_path)
+    map3 = read_map(map3_path)
+    mask = read_map(mask_path)
+    # Analyse the input maps for evaluation purposes
+    map_dimensions = np.shape(map1)
+    rows = map_dimensions[0]
+    cols = map_dimensions[1]
+    # Generate the Enrichment Factor and contingency table.
+    data_ef = ef(luc, max_distance, cdl, cd, N, map1, map2, mask, rows, cols)
+    # Log scale the enrichment factor values.
+    log_data_ef = np.zeros(shape=(max_distance, luc, luc))
+    for p in range(0, luc):
+        for q in range(0, luc):
+            for c in range(0, max_distance):
+                if data_ef[c, p, q] == 0:
+                    log_data_ef[c, p, q] = -9999
+                else:
+                    log_data_ef[c, p, q] = math.log(data_ef[c, p, q], 10)
+    # Generate the contingency table using the module, 'contingency_table'
+    cont_table = contingency_table(map1, map2, mask, luc, rows, cols)
+    # Evaluate the rates of inertia and conversion
+    ic_rates = np.zeros(shape=(luc, luc))
+    for i in range(0, luc):
+        for j in range(0, luc):
+            if i == j:
+                if cont_table[i, luc] > 0:
+                    ic_rates[i, j] = cont_table[i, j] / cont_table[i, luc]
+            else:
+                conversions = abs(float(cont_table[j, j]) - float(cont_table[luc, j]))
+                if conversions > 0:
+                    ic_rates[i, j] = float(cont_table[i, j]) / float(conversions)
+    # Load the attraction rules file
+    att_rule_file = output_path + case_study + "\\Rules\\att_rules.txt"
+    att_rules = np.loadtxt(att_rule_file)
+    # Specify the variable transformation parameter range.
+    varied_parameter = "theta_cp"
+    low_bound = 0
+    high_bound = 101
+    step_size = 10
+    for b in range(low_bound, high_bound, step_size):
+        # Set the variable parameter value. This will change depending on
+        # what is tested. Hard coded for convenience.
+        theta_cp = (float(b)*.025)/10
+        # Calculate the relevant parameters
+        high_conversion = high_inertia * theta_cp
+        mid_conversion = mid_inertia * theta_cp
+        low_conversion = low_inertia * theta_cp
+
         # Input the rules to be analysed. Start by initialising a dictionary for
         # storage.
         rules = {}
@@ -159,35 +202,6 @@ for a in range(low_bound, high_bound, step_size):
             for j in range(0, luc):
                 key = "from " + luc_names[j] + " to " + luc_names[i + pas]
                 rules[key] = [0, 0, 0, 5]
-        # Load the attraction rules file
-        att_rule_file = output_path + case_study + "\\Rules\\att_rules.txt"
-        att_rules = np.loadtxt(att_rule_file)
-
-        # Calculate the enrichment factor values for the data for initialisation setting,
-        # using the module, 'ef'.
-        data_ef = ef(luc, max_distance, cdl, cd, N, map1, map2, mask, rows, cols)
-        # Log scale the enrichmet factor values
-        log_data_ef = np.zeros(shape=(max_distance, luc, luc))
-        for p in range(0, luc):
-            for q in range(0, luc):
-                for c in range(0, max_distance):
-                    if data_ef[c, p, q] == 0:
-                        log_data_ef[c, p, q] = -9999
-                    else:
-                        log_data_ef[c, p, q] = math.log(data_ef[c, p, q], 10)
-        # Generate the contingency table using the module, 'contingency_table'
-        cont_table = contingency_table(map1, map2, mask, luc, rows, cols)
-        # Evaluate the rates of inertia and conversion
-        ic_rates = np.zeros(shape=(luc, luc))
-        for i in range(0, luc):
-            for j in range(0, luc):
-                if i == j:
-                    if cont_table[i, luc] > 0:
-                        ic_rates[i, j] = cont_table[i, j] / cont_table[i, luc]
-                else:
-                    conversions = abs(float(cont_table[j, j]) - float(cont_table[luc, j]))
-                    if conversions > 0:
-                        ic_rates[i, j] = float(cont_table[i, j]) / float(conversions)
         # Set the initial neighbourhood rule values for inertia and conversion.
         for i in range(0, act):
             for j in range(0, luc):
@@ -271,7 +285,6 @@ for a in range(low_bound, high_bound, step_size):
                             rules[key][3] = c + 1
 
         # Input the rules into the model.
-        # Input the rules to the specified project files.
         for i in range(0, luc):
             for j in range(0, act):
                 key = "from " + luc_names[i] + " to " + luc_names[j + pas]
@@ -283,7 +296,7 @@ for a in range(low_bound, high_bound, step_size):
                 xe = rules[key][3]
                 set_lp_rule(project_file_2000, fu_elem, lu_elem, y0, y1, y2, xe)
                 set_lp_rule(project_file_2006, fu_elem, lu_elem, y0, y1, y2, xe)
-
+        run_count = 0
         # Now generate the simulated output and track the results.
         while run_count < max_runs:
             # Perform analysis for the calibration period (1990-2000).
@@ -295,11 +308,11 @@ for a in range(low_bound, high_bound, step_size):
             it_kappa = kappa(map2, smap, mask)
             it_ksim = ksim(map1, map2, smap, mask)
             it_clu = clumpiness_index(smap, mask, luc)
-            key1 = case_study + str(a) + "kappa-2000-it-" + str(seed)
+            key1 = case_study + "-" + str(b) + "-kappa-2000-it-" + str(seed)
             metrics[key1] = it_kappa
-            key2 = case_study + str(a) + "ksim-2000-it-" + str(seed)
+            key2 = case_study + "-" + str(b) + "-ksim-2000-it-" + str(seed)
             metrics[key2] = it_ksim
-            key3 = case_study + str(a) + "clu-2000-it-" + str(seed)
+            key3 = case_study + "-" + str(b) + "-clu-2000-it-" + str(seed)
             metrics[key3] = it_clu
             # Perform analysis for validation period (2000-2006).
             set_rand(project_file_2006, seed)
@@ -309,47 +322,57 @@ for a in range(low_bound, high_bound, step_size):
             it_kappa = kappa(map3, smap, mask)
             it_ksim = ksim(map2, map3, smap, mask)
             it_clu = clumpiness_index(smap, mask, luc)
-            key1 = case_study + str(a) + "kappa-2006-it-" + str(seed)
+            key1 = case_study + "-" + str(b) + "-kappa-2006-it-" + str(seed)
             metrics[key1] = it_kappa
-            key2 = case_study + str(a) + "ksim-2006-it-" + str(seed)
+            key2 = case_study + "-" + str(b) + "-ksim-2006-it-" + str(seed)
             metrics[key2] = it_ksim
-            key3 = case_study + str(a) + "clu-2006-it-" + str(seed)
+            key3 = case_study + "-" + str(b) + "-clu-2006-it-" + str(seed)
             metrics[key3] = it_clu
             # Add 1 to iterator
             run_count = run_count + 1
 
 # Write the output to a .csv file.
-metrics_output_file = output_path + "\\sa_output_metrics.csv"
-store = [0]*(5 + luc)
+metrics_output_file = output_path + "\\sa_" + varied_parameter \
+                      + "_output_metrics.csv"
+store = [0]*(6 + luc)
 with open (metrics_output_file, "wb") as csv_file:
     writer = csv.writer(csv_file)
-    values = ["Case study", "Var Par Value", "Seed", "Kappa", "KSIM"] + luc_names
+    values = ["Case study", "Year", "Var Par Value", "Seed", "Kappa", "KSIM"] + luc_names
     writer.writerow(values)
-    for b in range(0, len(case_studies)):
-        for a in range(low_bound, high_bound, step_size):
+    for a in range(0, len(case_studies)):
+        case_study = case_studies[a]
+        for b in range(low_bound, high_bound, step_size):
             for x in range(0, max_runs):
                 seed = base_seed + x
-                store[0] = case_studies[b]
-                store[1] = str(a)
-                store[2] = str(x)
-                key1 = case_study + str(a) + "kappa-2000-it-" + str(seed)
-                key2 = case_study + str(a) + "ksim-2000-it-" + str(seed)
-                key3 = case_study + str(a) + "clu-2000-it-" + str(seed)
-                store[3] = metrics[key1]
-                store[4] = metrics[key2]
+                store[0] = case_study
+                store[1] = "2000"
+                store[2] = str(float(b)*0.025/10)
+                store[3] = str(x)
+                key1 = case_study + "-" + str(b) + "-kappa-2000-it-" + str(seed)
+                key2 = case_study + "-" + str(b) + "-ksim-2000-it-" + str(seed)
+                key3 = case_study + "-" + str(b) + "-clu-2000-it-" + str(seed)
+                store[4] = metrics[key1]
+                store[5] = metrics[key2]
                 for c in range(0, luc):
-                    store[5 + b] = metrics[key3][c]
+                    store[6 + c] = metrics[key3][c]
                 writer.writerow(store)
+        for b in range(low_bound, high_bound, step_size):
             for x in range(0, max_runs):
                 seed = base_seed + x
-                store[0] = case_studies[b]
-                store[1] = str(a)
-                store[2] = str(x)
-                key1 = case_study + str(a) + "kappa-2006-it-" + str(seed)
-                key2 = case_study + str(a) + "ksim-2006-it-" + str(seed)
-                key3 = case_study + str(a) + "clu-2006-it-" + str(seed)
-                store[3] = metrics[key1]
-                store[4] = metrics[key2]
+                store[0] = case_study
+                store[1] = "2006"
+                store[2] = str(float(b)*0.025/10)
+                store[3] = str(x)
+                key1 = case_study + "-" + str(b) + "-kappa-2006-it-" + str(seed)
+                key2 = case_study + "-" + str(b) + "-ksim-2006-it-" + str(seed)
+                key3 = case_study + "-" + str(b) + "-clu-2006-it-" + str(seed)
+                store[4] = metrics[key1]
+                store[5] = metrics[key2]
                 for c in range(0, luc):
-                    store[5 + b] = metrics[key3][c]
+                    store[6 + c] = metrics[key3][c]
                 writer.writerow(store)
+                
+import winsound
+freq=2500
+dur=1000
+winsound.Beep(freq,dur)

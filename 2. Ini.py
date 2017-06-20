@@ -20,7 +20,7 @@ high_inertia_band = 0.95
 mid_inertia_band = 0.90
 # Specify the different inertia values taken based on band.
 high_inertia = 1000
-mid_inertia = 800
+mid_inertia = 750
 low_inertia = 500
 # Specify the tail value for self-influence rules at a distance of 1.
 d1_high_si_value = 100
@@ -35,21 +35,21 @@ high_conversion_band = 0.5
 mid_conversion_band = 0.1
 low_conversion_band = 0.02
 # Specify the different conversion values taken based on band
-high_conversion = 50
-mid_conversion = 20
+high_conversion = 20
+mid_conversion = 10
 low_conversion = 5
 # Specify the tail value for interaction rules at a distance of 1.
 d1_high_co_value = 10
 d1_mid_co_value = 5
 d1_low_co_value = 2
-# Specify the tail value for interation rules at a distance of 2.
+# Specify the tail value for interaction rules at a distance of 2.
 d2_high_co_value = 1
 d2_mid_co_value = 0.5
 d2_low_co_value = 0.2
 
 # Specify the base path to the directory containing the empirical neighbourhood
 # calibration tool-pack.
-base_path = "C:\\ENC\\"
+base_path = "C:\\Users\\charl\\OneDrive\\Documents\\ENC\\"
 # Select an example case study application. Specify the name below:
 case_study = "Rome"
 # Set the paths to the directories and relevant data

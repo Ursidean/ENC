@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e2ceed3-2cfe-40fe-92d1-1321fc58da22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/1. Neighbourhood rule initialiser.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gc_rule_evaluation.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Berlin/Rules/inertia_adjusted_rules.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Berlin/final_rule_metrics.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Budapest/Rules/inertia_adjusted_rules.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Budapest/final_rule_metrics.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Madrid/Rules/inertia_adjusted_rules.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Madrid/final_rule_metrics.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Rome/Rules/inertia_adjusted_rules.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Example_case_study_output/Rome/final_rule_metrics.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ef_ssr_tail.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Metric processsor.xlsx" afterPath="$PROJECT_DIR$/Example_case_study_output/Metric processsor.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ENC.iml" afterPath="$PROJECT_DIR$/.idea/ENC.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2. Ini.py" afterPath="$PROJECT_DIR$/2. Ini.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/3. Fine_tune_inertia.py" afterPath="$PROJECT_DIR$/3. Fine_tune_inertia.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/4. Fine_tune.py" afterPath="$PROJECT_DIR$/4. Fine_tune.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Berlin/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Berlin/Rules/initial_rules.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Berlin/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Berlin/initial_rule_metrics.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Budapest/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Budapest/Rules/initial_rules.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Budapest/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Budapest/initial_rule_metrics.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Madrid/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Madrid/Rules/initial_rules.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Madrid/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Madrid/initial_rule_metrics.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Rome/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Rome/Rules/initial_rules.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MWU_test.py" afterPath="$PROJECT_DIR$/MWU_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clumpy_module.py" afterPath="$PROJECT_DIR$/clumpy_module.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enrichment_factor.py" afterPath="$PROJECT_DIR$/enrichment_factor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kappa.py" afterPath="$PROJECT_DIR$/kappa.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neighbourhood_evaluator.py" afterPath="$PROJECT_DIR$/neighbourhood_evaluator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Rome/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Rome/initial_rule_metrics.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gc_rule_evaluation.py" afterPath="$PROJECT_DIR$/gc_rule_evaluation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ratio_sensitivity_analysis.py" afterPath="$PROJECT_DIR$/ratio_sensitivity_analysis.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule_evaluation.py" afterPath="$PROJECT_DIR$/rule_evaluation.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,17 +27,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ENC$read_map.coverage" NAME="read_map Coverage Results" MODIFIED="1496646814350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$rule_evaluation.coverage" NAME="rule_evaluation Coverage Results" MODIFIED="1497398525903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$gc_rule_evaluation.coverage" NAME="gc_rule_evaluation Coverage Results" MODIFIED="1497424227882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$3__Fine_tune_inertia.coverage" NAME="3. Fine_tune_inertia Coverage Results" MODIFIED="1496900564864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$1_Sig_test.coverage" NAME="1 Sig_test Coverage Results" MODIFIED="1496034213504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$1__Sig_test.coverage" NAME="1. Sig_test Coverage Results" MODIFIED="1496622390673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$2_Ini.coverage" NAME="2 Ini Coverage Results" MODIFIED="1496642221053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/ENC1" />
-    <SUITE FILE_PATH="coverage/ENC$4__Fine_tune.coverage" NAME="4. Fine_tune Coverage Results" MODIFIED="1497165897368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ENC$3__FT_inertia.coverage" NAME="3. FT_inertia Coverage Results" MODIFIED="1496727428441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ENC$2__Ini.coverage" NAME="2. Ini Coverage Results" MODIFIED="1497345487473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$2_Ini.coverage" NAME="2 Ini Coverage Results" MODIFIED="1496642221053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/ENC1" />
+    <SUITE FILE_PATH="coverage/ENC$2__Ini.coverage" NAME="2. Ini Coverage Results" MODIFIED="1497493586021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$1_Sig_test.coverage" NAME="1 Sig_test Coverage Results" MODIFIED="1496034213504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$4__Fine_tune.coverage" NAME="4. Fine_tune Coverage Results" MODIFIED="1497165897368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$rule_evaluation.coverage" NAME="rule_evaluation Coverage Results" MODIFIED="1497494404534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$3__Fine_tune_inertia.coverage" NAME="3. Fine_tune_inertia Coverage Results" MODIFIED="1496900564864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$ratio_sensitivity_analysis.coverage" NAME="ratio_sensitivity_analysis Coverage Results" MODIFIED="1497839474225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$read_map.coverage" NAME="read_map Coverage Results" MODIFIED="1496646814350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ENC$Test.coverage" NAME="Test Coverage Results" MODIFIED="1496035542859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$1__Sig_test.coverage" NAME="1. Sig_test Coverage Results" MODIFIED="1496622390673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENC$gc_rule_evaluation.coverage" NAME="gc_rule_evaluation Coverage Results" MODIFIED="1497492392238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -63,11 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2. Ini.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/2. Ini.py">
+      <file leaf-file-name="ratio_sensitivity_analysis.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ratio_sensitivity_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="208" column="60" lean-forward="false" selection-start-line="208" selection-start-column="60" selection-end-line="208" selection-end-column="60" />
+            <state relative-caret-position="155">
+              <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -89,6 +81,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -116,10 +113,11 @@
         <option value="$PROJECT_DIR$/neighbourhood_evaluator.py" />
         <option value="$PROJECT_DIR$/ef_ssr_calc.py" />
         <option value="$PROJECT_DIR$/4. Fine_tune.py" />
-        <option value="$PROJECT_DIR$/2. Ini.py" />
-        <option value="$PROJECT_DIR$/rule_evaluation.py" />
-        <option value="$PROJECT_DIR$/gc_rule_evaluation.py" />
         <option value="$PROJECT_DIR$/1. Neighbourhood rule initialiser.py" />
+        <option value="$PROJECT_DIR$/gc_rule_evaluation.py" />
+        <option value="$PROJECT_DIR$/rule_evaluation.py" />
+        <option value="$PROJECT_DIR$/2. Ini.py" />
+        <option value="$PROJECT_DIR$/ratio_sensitivity_analysis.py" />
       </list>
     </option>
   </component>
@@ -130,13 +128,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1942" />
+    <option name="height" value="1042" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -149,11 +147,15 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Continuum/Anaconda3/envs/Python27/python.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -174,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gc_rule_evaluation">
+  <component name="RunManager" selected="Python.ratio_sensitivity_analysis">
     <configuration default="false" name="2. Ini" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -232,25 +234,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="3. Fine_tune_inertia" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ENC" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3. Fine_tune_inertia.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="gc_rule_evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -265,6 +248,25 @@
       <module name="ENC" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gc_rule_evaluation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ratio_sensitivity_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ENC" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ratio_sensitivity_analysis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -402,6 +404,23 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ENC" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -422,16 +441,16 @@
       <item index="0" class="java.lang.String" itemvalue="Python.2. Ini" />
       <item index="1" class="java.lang.String" itemvalue="Python.rule_evaluation" />
       <item index="2" class="java.lang.String" itemvalue="Python.4. Fine_tune" />
-      <item index="3" class="java.lang.String" itemvalue="Python.3. Fine_tune_inertia" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gc_rule_evaluation" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gc_rule_evaluation" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ratio_sensitivity_analysis" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.gc_rule_evaluation" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ratio_sensitivity_analysis" />
         <item index="1" class="java.lang.String" itemvalue="Python.rule_evaluation" />
         <item index="2" class="java.lang.String" itemvalue="Python.2. Ini" />
-        <item index="3" class="java.lang.String" itemvalue="Python.4. Fine_tune" />
-        <item index="4" class="java.lang.String" itemvalue="Python.3. Fine_tune_inertia" />
+        <item index="3" class="java.lang.String" itemvalue="Python.gc_rule_evaluation" />
+        <item index="4" class="java.lang.String" itemvalue="Python.4. Fine_tune" />
       </list>
     </recent_temporary>
   </component>
@@ -461,15 +480,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43644068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11770833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33789954" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33480662" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3213898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33789954" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3213898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -518,7 +537,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1 Sig_test.py" />
     <entry file="file://$PROJECT_DIR$/read_map.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -609,31 +627,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda3/envs/Python27/Scripts/gdal_auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda3/envs/Python27/Scripts/gdal_auth.py" />
     <entry file="file://$PROJECT_DIR$/1 Sig_test.py" />
     <entry file="file://$PROJECT_DIR$/Test.py" />
     <entry file="file://E:/ENC_Transfer/considered_distances.py" />
     <entry file="file://E:/ENC_Transfer/1 Sig Test.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda3/envs/Python27/Lib/xml/etree/ElementTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="1516" column="0" lean-forward="false" selection-start-line="1516" selection-start-column="0" selection-end-line="1516" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ENC1/2 Ini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda3/envs/Python27/Lib/xml/etree/ElementTree.py" />
+    <entry file="file://C:/ENC1/2 Ini.py" />
     <entry file="file://$PROJECT_DIR$/set_rand.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -703,7 +703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mwu_test.py">
+    <entry file="file://$PROJECT_DIR$/MWU_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
           <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
@@ -721,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,27 +745,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ENC1/Null_analyser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="877">
-          <caret line="225" column="60" lean-forward="true" selection-start-line="225" selection-start-column="60" selection-end-line="225" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1. Sig_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="118" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gc_rule_evaluation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="157" column="34" lean-forward="true" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ENC1/Null_analyser.py" />
     <entry file="file://$PROJECT_DIR$/1. Neighbourhood rule initialiser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -774,18 +753,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/1. Sig_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="93" column="1" lean-forward="true" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gc_rule_evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rule_evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2193">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2. Ini.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="208" column="60" lean-forward="false" selection-start-line="208" selection-start-column="60" selection-end-line="208" selection-end-column="60" />
+        <state relative-caret-position="225">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ratio_sensitivity_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
           <folding />
         </state>
       </provider>

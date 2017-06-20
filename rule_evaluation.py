@@ -17,7 +17,7 @@ from set_NR import set_lp_rule
 
 # Specify the base path to the directory containing the empirical neighbourhood
 # calibration tool-pack.
-base_path = "C:\\ENC\\"
+base_path = "C:\\Users\\charl\\OneDrive\\Documents\\ENC\\"
 # Select an example case study application. Specify the name below:
 case_study = "Rome"
 # Set the paths to the relevant directories
@@ -100,10 +100,10 @@ run_count = 0
 metrics = {}
 # Specify the working directory, the folder containing the Metronamica
 # project file.
-working_directory_2000 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                          + case_study + "\\")
-working_directory_2006 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                          + case_study + "_2006\\")
+working_directory_2000 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                          "Metronamica\\" + case_study + "\\")
+working_directory_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                          "Metronamica\\" + case_study + "_2006\\")
 # Specify the project file names.
 project_file_2000 = working_directory_2000 + case_study + ".geoproj"
 project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
@@ -111,11 +111,11 @@ project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
 log_file_2000 = base_path + "LogSettings.xml"
 log_file_2006 = base_path + "LogSettings2006.xml"
 # Specify the paths to the simulated output maps.
-smap_path_2000 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                  + case_study + "\\Log\\Land_use\\"
+smap_path_2000 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                  "Metronamica\\" + case_study + "\\Log\\Land_use\\"
                   "Land use map_2000-Jan-01 00_00_00.rst")
-smap_path_2006 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                  + case_study + "_2006\\Log\\Land_use\\"
+smap_path_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                  "Metronamica\\" + case_study + "_2006\\Log\\Land_use\\"
                   "Land use map_2006-Jan-01 00_00_00.rst")
 # Input the rules to the specified project files.
 for i in range(0, luc):

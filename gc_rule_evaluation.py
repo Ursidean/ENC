@@ -3,8 +3,6 @@ Evaluate a growing clusters rule set using Kappa, Kappa Simulation and clumpines
 """
 
 
-import numpy as np
-from considered_distances import considered_distances
 import csv
 from read_map import read_map
 from kappa import kappa
@@ -17,8 +15,8 @@ from set_NR import set_lp_rule
 
 # Specify the base path to the directory containing the empirical neighbourhood
 # calibration tool-pack.
-base_path = "C:\\ENC\\"
-project_file_basepath = "C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
+base_path = "C:\\Users\\charl\\OneDrive\\Documents\\ENC\\"
+project_file_basepath = "C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\Metronamica\\"
 geo_cmd = "C:\\Program Files (x86)\\Geonamica\\Metronamica\\GeonamicaCmd.exe"
 log_settings_2000 = base_path + "LogSettings.xml"
 log_settings_2006 = base_path + "LogSettings2006.xml"
@@ -26,11 +24,12 @@ output_path = base_path + "Example_null_output\\"
 base_seed = 1000
 max_runs = 10
 
-#Case study variables.
-# Land_use_class_names
-luc_names = ["Natural areas", "Arable land", "Permanent crops", "Pastures", "Agricultural areas",
-             "Residential", "Industry & commerce", "Recreation areas", "Forest", "Road & rail",
-             "Seaports", "Airports", "Mine & dump sites", "Fresh water", "Marine water"]
+# Specify the case study variables.
+# The land-use class names.
+luc_names = ["Natural areas", "Arable land", "Permanent crops", "Pastures",
+             "Agricultural areas","Residential", "Industry & commerce",
+             "Recreation areas", "Forest", "Road & rail", "Seaports",
+             "Airports", "Mine & dump sites", "Fresh water", "Marine water"]
 # Maximum_neighbourhood_distance_considered
 dmax = 5
 # Number_of_land_use_classes

@@ -6,16 +6,16 @@ Natural areas,Agricultural areas,0,0,0,5
 Natural areas,Residential,5,0,0,5
 Natural areas,Industry & commerce,0,0,0,5
 Natural areas,Recreation areas,0,0,0,5
-Natural areas,Forest,50,2,0.2,5
+Natural areas,Forest,20,2,0.2,5
 Arable land,Arable land,500,20,2,5
-Arable land,Permanent crops,50,2,0.2,5
-Arable land,Pastures,50,2,0.2,3
-Arable land,Agricultural areas,50,0,0,5
-Arable land,Residential,50,0,0,5
-Arable land,Industry & commerce,50,0,0,5
-Arable land,Recreation areas,50,0,0,5
+Arable land,Permanent crops,20,2,0.2,5
+Arable land,Pastures,20,2,0.2,3
+Arable land,Agricultural areas,20,0,0,5
+Arable land,Residential,20,0,0,5
+Arable land,Industry & commerce,20,0,0,5
+Arable land,Recreation areas,20,0,0,5
 Arable land,Forest,5,0,0,5
-Permanent crops,Arable land,20,5,0.2,5
+Permanent crops,Arable land,10,5,0.2,5
 Permanent crops,Permanent crops,500,20,2,5
 Permanent crops,Pastures,5,2,0.2,5
 Permanent crops,Agricultural areas,5,2,0.2,5
@@ -23,19 +23,19 @@ Permanent crops,Residential,5,0,0,5
 Permanent crops,Industry & commerce,5,2,0.2,5
 Permanent crops,Recreation areas,0,0,0,5
 Permanent crops,Forest,0,0,0,5
-Pastures,Arable land,50,2,0.2,5
+Pastures,Arable land,20,2,0.2,5
 Pastures,Permanent crops,0,0,0,5
 Pastures,Pastures,800,20,2,5
 Pastures,Agricultural areas,5,0,0,5
-Pastures,Residential,20,0,0,5
-Pastures,Industry & commerce,20,0,0,5
-Pastures,Recreation areas,20,0,0,5
+Pastures,Residential,10,0,0,5
+Pastures,Industry & commerce,10,0,0,5
+Pastures,Recreation areas,10,0,0,5
 Pastures,Forest,0,0,0,5
 Agricultural areas,Arable land,5,0,0,5
 Agricultural areas,Permanent crops,0,2,0.2,5
 Agricultural areas,Pastures,5,0,0,5
 Agricultural areas,Agricultural areas,1000,20,2,5
-Agricultural areas,Residential,20,2,0.2,5
+Agricultural areas,Residential,10,2,0.2,5
 Agricultural areas,Industry & commerce,5,0,0,5
 Agricultural areas,Recreation areas,0,0,0,5
 Agricultural areas,Forest,0,0,0,5
@@ -45,7 +45,7 @@ Residential,Pastures,0,0,0,5
 Residential,Agricultural areas,0,0,0,5
 Residential,Residential,1000,20,2,5
 Residential,Industry & commerce,5,2,0.2,5
-Residential,Recreation areas,20,2,0.2,5
+Residential,Recreation areas,10,2,0.2,5
 Residential,Forest,0,0,0,5
 Industry & commerce,Arable land,0,0,0,5
 Industry & commerce,Permanent crops,0,0,0,5
