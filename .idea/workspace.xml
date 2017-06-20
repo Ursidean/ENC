@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e2ceed3-2cfe-40fe-92d1-1321fc58da22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ENC.iml" afterPath="$PROJECT_DIR$/.idea/ENC.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2. Ini.py" afterPath="$PROJECT_DIR$/2. Ini.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Berlin/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Berlin/Rules/initial_rules.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Berlin/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Berlin/initial_rule_metrics.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Budapest/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Budapest/Rules/initial_rules.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Budapest/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Budapest/initial_rule_metrics.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Madrid/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Madrid/Rules/initial_rules.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Madrid/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Madrid/initial_rule_metrics.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Rome/Rules/initial_rules.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Rome/Rules/initial_rules.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example_case_study_output/Rome/initial_rule_metrics.csv" afterPath="$PROJECT_DIR$/Example_case_study_output/Rome/initial_rule_metrics.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gc_rule_evaluation.py" afterPath="$PROJECT_DIR$/gc_rule_evaluation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ratio_sensitivity_analysis.py" afterPath="$PROJECT_DIR$/ratio_sensitivity_analysis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule_evaluation.py" afterPath="$PROJECT_DIR$/rule_evaluation.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,11 +40,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ratio_sensitivity_analysis.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ratio_sensitivity_analysis.py">
+      <file leaf-file-name="1. Neighbourhood rule initialiser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1. Neighbourhood rule initialiser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+            <state relative-caret-position="170">
+              <caret line="247" column="60" lean-forward="false" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3. Fine_tune_ratio.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/3. Fine_tune_ratio.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,6 +113,7 @@
         <option value="$PROJECT_DIR$/rule_evaluation.py" />
         <option value="$PROJECT_DIR$/2. Ini.py" />
         <option value="$PROJECT_DIR$/ratio_sensitivity_analysis.py" />
+        <option value="$PROJECT_DIR$/3. FT_ratio.py" />
       </list>
     </option>
   </component>
@@ -149,13 +145,13 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/3. Fine_tune_ratio.py" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -481,6 +477,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11770833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -537,20 +534,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/read_map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/enrichment_factor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1 Sig_test.py" />
     <entry file="file://$PROJECT_DIR$/read_map.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -746,13 +729,6 @@
       </provider>
     </entry>
     <entry file="file://C:/ENC1/Null_analyser.py" />
-    <entry file="file://$PROJECT_DIR$/1. Neighbourhood rule initialiser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="247" column="60" lean-forward="false" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1. Sig_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2200">
@@ -783,8 +759,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ratio_sensitivity_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+        <state relative-caret-position="8400">
+          <caret line="348" column="40" lean-forward="false" selection-start-line="348" selection-start-column="40" selection-end-line="348" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3. FT_ratio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1. Neighbourhood rule initialiser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="247" column="60" lean-forward="false" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3. Fine_tune_ratio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
