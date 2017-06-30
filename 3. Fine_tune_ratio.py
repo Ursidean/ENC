@@ -4,6 +4,7 @@ fine tuning of the neighbourhood rule ratios to improve the agreement with the
 observed enrichment factor values.
 """
 
+import time
 import math
 import numpy as np
 from read_map import read_map
@@ -16,6 +17,8 @@ from multi_sims_ef import multi_sims_ef
 from kappa import ksim
 import csv
 from ef_ssr_calc import ef_ssr
+
+start_time = time.time()
 
 # Specify the base path to the directory containing the empirical neighbourhood
 # calibration tool-pack.
@@ -832,4 +835,8 @@ with open(final_rules_file_path, "wb") as csv_file:
             store[4] = rules[key][2]
             store[5] = rules[key][3]
             writer.writerow(store)
+# Determine the time taken.
+end_time = time.time()
+total_time = end_time - start_time
+print "Time taken:" + str(total_time)
 # Calibration completed!

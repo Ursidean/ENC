@@ -47,7 +47,7 @@ for c in range(0, max_distance):
     N.append(N_all[c])
 # Specify the fine-tuning calibration method parameters, the base random seed, the
 # maximum number of simulation runs, and the golden section search tolerance.
-max_runs = 5
+max_runs = 30
 base_seed = 1000
 # Specify the log files.
 log_file_2000 = base_path + "LogSettings.xml"
@@ -71,22 +71,24 @@ high_inertia = 1000.0
 mid_inertia = 500.0
 low_inertia = 250.0
 # Specify the fixed transformation parameters.
-"""
+
+theta_i1 = 0.030
+theta_i2 = theta_i1*0.1
+
 theta_cp = 0.025
 """
-theta_i1 = 0.05
-theta_i2 = theta_i1*0.1
 theta_c1 = 0.005
 theta_c2 = theta_c1*0.1
-
+"""
 # Calculate all relevant parameter values.
 # Set the conversion parameter values.
-"""
+
 high_conversion = high_inertia * theta_cp
 mid_conversion = mid_inertia * theta_cp
 low_conversion = low_inertia * theta_cp
-"""
+
 # Set the distance 1 tail values for self-influence rules.
+
 d1_high_si_value = high_inertia * theta_i1
 d1_mid_si_value = mid_inertia * theta_i1
 d1_low_si_value = low_inertia * theta_i1
@@ -96,6 +98,7 @@ d2_mid_si_value = mid_inertia * theta_i2
 d2_low_si_value = low_inertia * theta_i2
 
 # Set the distance 1 tail values for interaction rules.
+"""
 d1_high_co_value = high_inertia * theta_c1
 d1_mid_co_value = mid_inertia * theta_c1
 d1_low_co_value = low_inertia * theta_c1
@@ -103,12 +106,12 @@ d1_low_co_value = low_inertia * theta_c1
 d2_high_co_value = high_inertia * theta_c2
 d2_mid_co_value = mid_inertia * theta_c2
 d2_low_co_value = low_inertia * theta_c2
-
+"""
 # Initialise a dictionary to store the metrics calculated.
 metrics = {}
 
 # Specify a list of case studies to analyse.
-case_studies = ["Berlin"]#, "Budapest", "Madrid", "Rome"]
+case_studies = ["Rome"]#["Berlin", "Budapest", "Madrid", "Rome"]
 
 # Iterate through the case studies for testing.
 for a in range(0, len(case_studies)):
@@ -182,18 +185,31 @@ for a in range(0, len(case_studies)):
     att_rule_file = output_path + case_study + "\\Rules\\att_rules.txt"
     att_rules = np.loadtxt(att_rule_file)
     # Specify the variable transformation parameter range.
-    varied_parameter = "theta_cp"
+    varied_parameter = "theta_ct"
     low_bound = 0
-    high_bound = 101
+    high_bound = 41
     step_size = 10
     for b in range(low_bound, high_bound, step_size):
         # Set the variable parameter value. This will change depending on
         # what is tested. Hard coded for convenience.
+        """
         theta_cp = (float(b)*.025)/10
-        # Calculate the relevant parameters
+        print theta_cp
         high_conversion = high_inertia * theta_cp
         mid_conversion = mid_inertia * theta_cp
         low_conversion = low_inertia * theta_cp
+        """
+        theta_c1 = (float(b)*.005)/10
+        theta_c2 = theta_c1*0.1
+        print theta_c1
+        # Set the distance 1 tail value for interaction rules.
+        d1_high_co_value = high_inertia * theta_c1
+        d1_mid_co_value = mid_inertia * theta_c1
+        d1_low_co_value = low_inertia * theta_c1
+        # Set the distance 2 tail value for interaction rules.
+        d2_high_co_value = high_inertia * theta_c2
+        d2_mid_co_value = mid_inertia * theta_c2
+        d2_low_co_value = low_inertia * theta_c2
 
         # Input the rules to be analysed. Start by initialising a dictionary for
         # storage.
@@ -315,6 +331,7 @@ for a in range(0, len(case_studies)):
             key3 = case_study + "-" + str(b) + "-clu-2000-it-" + str(seed)
             metrics[key3] = it_clu
             # Perform analysis for validation period (2000-2006).
+
             set_rand(project_file_2006, seed)
             run_metro(project_file_2006, log_file_2006, working_directory_2006,
                       geo_cmd)
@@ -328,6 +345,7 @@ for a in range(0, len(case_studies)):
             metrics[key2] = it_ksim
             key3 = case_study + "-" + str(b) + "-clu-2006-it-" + str(seed)
             metrics[key3] = it_clu
+
             # Add 1 to iterator
             run_count = run_count + 1
 
@@ -346,7 +364,10 @@ with open (metrics_output_file, "wb") as csv_file:
                 seed = base_seed + x
                 store[0] = case_study
                 store[1] = "2000"
-                store[2] = str(float(b)*0.025/10)
+                if varied_parameter == "theta_cp":
+                    store[2] = str((float(b) * .025) / 10)
+                else:
+                    store[2] = str((float(b)*.005)/10)
                 store[3] = str(x)
                 key1 = case_study + "-" + str(b) + "-kappa-2000-it-" + str(seed)
                 key2 = case_study + "-" + str(b) + "-ksim-2000-it-" + str(seed)
@@ -356,12 +377,16 @@ with open (metrics_output_file, "wb") as csv_file:
                 for c in range(0, luc):
                     store[6 + c] = metrics[key3][c]
                 writer.writerow(store)
+
         for b in range(low_bound, high_bound, step_size):
             for x in range(0, max_runs):
                 seed = base_seed + x
                 store[0] = case_study
                 store[1] = "2006"
-                store[2] = str(float(b)*0.025/10)
+                if varied_parameter == "theta_cp":
+                    store[2] = str((float(b) * .025) / 10)
+                else:
+                    store[2] = str((float(b)*.005)/10)
                 store[3] = str(x)
                 key1 = case_study + "-" + str(b) + "-kappa-2006-it-" + str(seed)
                 key2 = case_study + "-" + str(b) + "-ksim-2006-it-" + str(seed)
@@ -371,6 +396,7 @@ with open (metrics_output_file, "wb") as csv_file:
                 for c in range(0, luc):
                     store[6 + c] = metrics[key3][c]
                 writer.writerow(store)
+
                 
 import winsound
 freq=2500
