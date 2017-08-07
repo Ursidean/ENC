@@ -10,6 +10,7 @@ from read_map import read_map
 from kappa import kappa
 from kappa import ksim
 from clumpy_module import clumpiness_index
+from area_weighted_clu import area_weighted_clu_error
 from run_metro import run_metro
 from set_rand import set_rand
 from set_NR import set_lp_rule
@@ -17,9 +18,9 @@ from set_NR import set_lp_rule
 
 # Specify the base path to the directory containing the empirical neighbourhood
 # calibration tool-pack.
-base_path = "C:\\ENC\\"
+base_path = "C:\\Users\\charl\\OneDrive\\Documents\\ENC\\"
 # Select an example case study application. Specify the name below:
-case_study = "Rome"
+case_study = "Berlin"
 # Set the paths to the relevant directories
 data_path = base_path + "Example_case_study_data\\"
 output_path = base_path + "Example_case_study_output\\"
@@ -45,7 +46,7 @@ act = luc - (pas + fea)
 max_distance = 5
 # Specify the fine-tuning calibration method parameters, the base random seed, the
 # maximum number of simulation runs, and the golden section search tolerance.
-max_runs = 10
+max_runs = 50
 base_seed = 1000
 print "Testing case study:" + case_study
 # Read in the maps and mask.
@@ -69,6 +70,14 @@ N_all = [1, 8, 12, 16, 32, 28, 40, 40, 20]
 N = []
 for c in range(0, max_distance):
     N.append(N_all[c])
+# Count the presence of each land-use class in the actual map. This is
+# used in the calculation of area-weighted average clumpiness across the
+# active classes.
+luc_count = [0] * luc
+for i in range(0, rows):
+    for j in range(0, cols):
+        if mask[i, j] > 0:
+            luc_count[map2[i, j]] = luc_count[map2[i, j]] + 1
 
 # Input the rules to be analysed. Start by initialising a dictionary for
 # storage.
@@ -81,7 +90,7 @@ for i in range(0, act):
 att_rule_file = output_path + case_study + "\\Rules\\att_rules.txt"
 att_rules = np.loadtxt(att_rule_file)
 # Load the rules file, reading the inputs from the specified .csv file.
-rules_file = output_path + case_study + "\\Rules\\initial_rules.csv"
+rules_file = output_path + case_study + "\\Rules\\final_rules.csv"
 with open(rules_file, 'rb') as f:
     readCSV = csv.reader(f)
     next(f)
@@ -100,10 +109,10 @@ run_count = 0
 metrics = {}
 # Specify the working directory, the folder containing the Metronamica
 # project file.
-working_directory_2000 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                          + case_study + "\\")
-working_directory_2006 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                          + case_study + "_2006\\")
+working_directory_2000 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                          "Metronamica\\" + case_study + "\\")
+working_directory_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                          "Metronamica\\" + case_study + "_2006\\")
 # Specify the project file names.
 project_file_2000 = working_directory_2000 + case_study + ".geoproj"
 project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
@@ -111,11 +120,11 @@ project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
 log_file_2000 = base_path + "LogSettings.xml"
 log_file_2006 = base_path + "LogSettings2006.xml"
 # Specify the paths to the simulated output maps.
-smap_path_2000 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                  + case_study + "\\Log\\Land_use\\"
+smap_path_2000 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                  "Metronamica\\" + case_study + "\\Log\\Land_use\\"
                   "Land use map_2000-Jan-01 00_00_00.rst")
-smap_path_2006 = ("C:\\Users\\a1210607\\Geonamica\\Metronamica\\"
-                  + case_study + "_2006\\Log\\Land_use\\"
+smap_path_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+                  "Metronamica\\" + case_study + "_2006\\Log\\Land_use\\"
                   "Land use map_2006-Jan-01 00_00_00.rst")
 # Input the rules to the specified project files.
 for i in range(0, luc):
@@ -165,7 +174,7 @@ while run_count < max_runs:
 
 # Write the (metrics) to a .csv file
 
-metrics_output_file = output_path + case_study + "\\initial_rule_metrics.csv"
+metrics_output_file = output_path + case_study + "\\final_rule_metrics.csv"
 store = [0]*(3 + luc)
 with open (metrics_output_file, "wb") as csv_file:
     writer = csv.writer(csv_file)
