@@ -20,7 +20,7 @@ from set_NR import set_lp_rule
 # calibration tool-pack.
 base_path = "C:\\Users\\charl\\OneDrive\\Documents\\ENC\\"
 # Select an example case study application. Specify the name below:
-case_study = "Berlin"
+case_study = "Rome"
 # Set the paths to the relevant directories
 data_path = base_path + "Example_case_study_data\\"
 output_path = base_path + "Example_case_study_output\\"
@@ -46,7 +46,7 @@ act = luc - (pas + fea)
 max_distance = 5
 # Specify the fine-tuning calibration method parameters, the base random seed, the
 # maximum number of simulation runs, and the golden section search tolerance.
-max_runs = 50
+max_runs = 1
 base_seed = 1000
 print "Testing case study:" + case_study
 # Read in the maps and mask.
@@ -111,11 +111,15 @@ metrics = {}
 # project file.
 working_directory_2000 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
                           "Metronamica\\" + case_study + "\\")
-working_directory_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
-                          "Metronamica\\" + case_study + "_2006\\")
+
+#working_directory_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+#                           "Metronamica\\" + case_study + "_2006\\")
+
 # Specify the project file names.
 project_file_2000 = working_directory_2000 + case_study + ".geoproj"
-project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
+
+#project_file_2006 = working_directory_2006 + case_study + "_2006.geoproj"
+
 # Specify the log files.
 log_file_2000 = base_path + "LogSettings.xml"
 log_file_2006 = base_path + "LogSettings2006.xml"
@@ -123,9 +127,11 @@ log_file_2006 = base_path + "LogSettings2006.xml"
 smap_path_2000 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
                   "Metronamica\\" + case_study + "\\Log\\Land_use\\"
                   "Land use map_2000-Jan-01 00_00_00.rst")
-smap_path_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
-                  "Metronamica\\" + case_study + "_2006\\Log\\Land_use\\"
-                  "Land use map_2006-Jan-01 00_00_00.rst")
+
+#smap_path_2006 = ("C:\\Users\\charl\\OneDrive\\Documents\\Geonamica\\"
+#                  "Metronamica\\" + case_study + "_2006\\Log\\Land_use\\"
+#                  "Land use map_2006-Jan-01 00_00_00.rst")
+
 # Input the rules to the specified project files.
 for i in range(0, luc):
     for j in range(0, act):
@@ -137,7 +143,9 @@ for i in range(0, luc):
         y2 = rules[key][2]
         xe = rules[key][3]
         set_lp_rule(project_file_2000, fu_elem, lu_elem, y0, y1, y2, xe)
-        set_lp_rule(project_file_2006, fu_elem, lu_elem, y0, y1, y2, xe)
+
+#        set_lp_rule(project_file_2006, fu_elem, lu_elem, y0, y1, y2, xe)
+
 # Now generate the simulated output and track the results.
 while run_count < max_runs:
     # Perform analysis for the calibration period (1990-2000).
@@ -148,37 +156,39 @@ while run_count < max_runs:
     smap = read_map(smap_path_2000)
     it_kappa = kappa(map2, smap, mask)
     it_ksim = ksim(map1, map2, smap, mask)
-    it_clu = clumpiness_index(smap, mask, luc)
+    it_clu = area_weighted_clu_error(map2, smap, mask, luc, pas, act, luc_count)
     key1 = "kappa-2000-it-" + str(seed)
     metrics[key1] = it_kappa
     key2 = "ksim-2000-it-" + str(seed)
     metrics[key2] = it_ksim
     key3 = "clu-2000-it-" + str(seed)
     metrics[key3] = it_clu
+
     # Perform analysis for validation period (2000-2006).
-    set_rand(project_file_2006, seed)
-    run_metro(project_file_2006, log_file_2006, working_directory_2006,
-              geo_cmd)
-    smap = read_map(smap_path_2006)
-    it_kappa = kappa(map3, smap, mask)
-    it_ksim = ksim(map2, map3, smap, mask)
-    it_clu = clumpiness_index(smap, mask, luc)
-    key1 = "kappa-2006-it-" + str(seed)
-    metrics[key1] = it_kappa
-    key2 = "ksim-2006-it-" + str(seed)
-    metrics[key2] = it_ksim
-    key3 = "clu-2006-it-" + str(seed)
-    metrics[key3] = it_clu
+#    set_rand(project_file_2006, seed)
+#    run_metro(project_file_2006, log_file_2006, working_directory_2006,
+#              geo_cmd)
+#    smap = read_map(smap_path_2006)
+#    it_kappa = kappa(map3, smap, mask)
+#    it_ksim = ksim(map2, map3, smap, mask)
+#    it_clu = clumpiness_index(smap, mask, luc)
+#    key1 = "kappa-2006-it-" + str(seed)
+#    metrics[key1] = it_kappa
+#    key2 = "ksim-2006-it-" + str(seed)
+#    metrics[key2] = it_ksim
+#    key3 = "clu-2006-it-" + str(seed)
+#    metrics[key3] = it_clu
+
     # Add 1 to iterator
     run_count = run_count + 1
 
 # Write the (metrics) to a .csv file
 
-metrics_output_file = output_path + case_study + "\\final_rule_metrics.csv"
-store = [0]*(3 + luc)
+metrics_output_file = output_path + case_study + "\\final_rule_metrics-5.csv"
+store = [0]*4
 with open (metrics_output_file, "wb") as csv_file:
     writer = csv.writer(csv_file)
-    values = ["Key", "Kappa", "KSIM"] + luc_names
+    values = ["Key", "Kappa", "KSIM", "AAWCE"]
     writer.writerow(values)
     for x in range(0, max_runs):
         seed = base_seed + x
@@ -188,17 +198,17 @@ with open (metrics_output_file, "wb") as csv_file:
         store[0] = "2000-" + str(x)
         store[1] = metrics[key1]
         store[2] = metrics[key2]
-        for b in range(0, luc):
-            store[3 + b] = metrics[key3][b]
+        store[3] = metrics[key3]
         writer.writerow(store)
-    for x in range(0, max_runs):
-        seed = base_seed + x
-        key1 = "kappa-2006-it-" + str(seed)
-        key2 = "ksim-2006-it-" + str(seed)
-        key3 = "clu-2006-it-" + str(seed)
-        store[0] = "2006-" + str(x)
-        store[1] = metrics[key1]
-        store[2] = metrics[key2]
-        for b in range(0, luc):
-            store[3 + b] = metrics[key3][b]
-        writer.writerow(store)
+
+#    for x in range(0, max_runs):
+#        seed = base_seed + x
+#        key1 = "kappa-2006-it-" + str(seed)
+#        key2 = "ksim-2006-it-" + str(seed)
+#        key3 = "clu-2006-it-" + str(seed)
+#        store[0] = "2006-" + str(x)
+#        store[1] = metrics[key1]
+#        store[2] = metrics[key2]
+#        for b in range(0, luc):
+#            store[3 + b] = metrics[key3][b]
+#        writer.writerow(store)

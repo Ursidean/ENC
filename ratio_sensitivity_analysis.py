@@ -47,7 +47,7 @@ for c in range(0, max_distance):
     N.append(N_all[c])
 # Specify the fine-tuning calibration method parameters, the base random seed, the
 # maximum number of simulation runs, and the golden section search tolerance.
-max_runs = 30
+max_runs = 50
 base_seed = 1000
 # Specify the log files.
 log_file_2000 = base_path + "LogSettings.xml"

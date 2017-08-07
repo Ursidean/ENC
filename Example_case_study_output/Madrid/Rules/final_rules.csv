@@ -1,0 +1,121 @@
+from,to,I@x=0,I@x=1,I@x=2,x@I=0
+Natural areas,Arable land,3.037654437074135,0.4065309377891673,0.04065309377891674,3
+Natural areas,Permanent crops,7.75,0,0,5
+Natural areas,Pastures,0,0,0,5
+Natural areas,Agricultural areas,15.5,0,0,5
+Natural areas,Residential,15.5,0,0,5
+Natural areas,Industry & commerce,15.49883418688486,0,0,5
+Natural areas,Recreation areas,15.5,0.4065309377891673,0.04065309377891674,3
+Natural areas,Forest,19.253581563262347,0.4065309377891673,0.04065309377891674,5
+Arable land,Arable land,250.0,9.92602518680074,0.992602518680074,5
+Arable land,Permanent crops,31.0,0,0,5
+Arable land,Pastures,0,0,0,5
+Arable land,Agricultural areas,34.84838468642219,5.979339937873288,0.5979339937873288,5
+Arable land,Residential,31.0,3.25,0.325,5
+Arable land,Industry & commerce,29.27557568633807,3.25,0.325,5
+Arable land,Recreation areas,8.107963563094106,0,0,5
+Arable land,Forest,47.6201264377471,0,0,5
+Permanent crops,Arable land,93.51816018806255,0,0,5
+Permanent crops,Permanent crops,893.6254567206822,21.5,2.15,5
+Permanent crops,Pastures,0,0,0,5
+Permanent crops,Agricultural areas,0,0,0,5
+Permanent crops,Residential,0,0,0,5
+Permanent crops,Industry & commerce,0,0,0,5
+Permanent crops,Recreation areas,0,0,0,5
+Permanent crops,Forest,0,0,0,5
+Pastures,Arable land,0,0,0,5
+Pastures,Permanent crops,0,0,0,5
+Pastures,Pastures,250.0,14.685772311306525,1.4685772311306526,5
+Pastures,Agricultural areas,0,0,0,5
+Pastures,Residential,0,2.5351545630099857,0.2535154563009986,5
+Pastures,Industry & commerce,0,0,0,5
+Pastures,Recreation areas,0,0,0,5
+Pastures,Forest,0,0,0,5
+Agricultural areas,Arable land,61.70742993871451,0,0,5
+Agricultural areas,Permanent crops,15.5,13.680772563178227,1.3680772563178227,5
+Agricultural areas,Pastures,0,0,0,5
+Agricultural areas,Agricultural areas,388.30389765763005,9.42352531273659,0.942352531273659,5
+Agricultural areas,Residential,39.416193938378015,0,0,5
+Agricultural areas,Industry & commerce,2.2245925614958004,0,0,5
+Agricultural areas,Recreation areas,7.75,0,0,5
+Agricultural areas,Forest,0,0,0,5
+Residential,Arable land,0,0,0,5
+Residential,Permanent crops,0,0,0,5
+Residential,Pastures,0,0,0,5
+Residential,Agricultural areas,0,0,0,5
+Residential,Residential,1000.0,61.70742993871451,6.1707429938714515,5
+Residential,Industry & commerce,7.75,27.457514062631436,2.745751406263144,5
+Residential,Recreation areas,7.75,3.25,0.65,5
+Residential,Forest,0,0,0,5
+Industry & commerce,Arable land,0,3.25,0.325,4
+Industry & commerce,Permanent crops,0,0,0,5
+Industry & commerce,Pastures,0,0,0,5
+Industry & commerce,Agricultural areas,0,0,0,5
+Industry & commerce,Residential,0,9.92602518680074,0.992602518680074,5
+Industry & commerce,Industry & commerce,1000.0,57.450182688272875,5.7450182688272875,5
+Industry & commerce,Recreation areas,0,15.49883418688486,1.549883418688486,5
+Industry & commerce,Forest,0,0,0,5
+Recreation areas,Arable land,0,0,0,5
+Recreation areas,Permanent crops,0,0,0,5
+Recreation areas,Pastures,0,0,0,5
+Recreation areas,Agricultural areas,0,0,0,5
+Recreation areas,Residential,0,5.668777936359103,0.5668777936359103,5
+Recreation areas,Industry & commerce,0,0,0,5
+Recreation areas,Recreation areas,500.0,25.831390311474767,2.5831390311474767,5
+Recreation areas,Forest,0,0,0,5
+Forest,Arable land,7.75,0,0,5
+Forest,Permanent crops,0,0,0,5
+Forest,Pastures,0,0,0,5
+Forest,Agricultural areas,0,0,0,5
+Forest,Residential,0,0,0,5
+Forest,Industry & commerce,0,0,0,5
+Forest,Recreation areas,7.75,0,0,5
+Forest,Forest,1000.0,44.989002938462136,4.498900293846214,5
+Road & rail,Arable land,0,0,0,5
+Road & rail,Permanent crops,0,0,0,5
+Road & rail,Pastures,0,0,0,5
+Road & rail,Agricultural areas,0,0,0,5
+Road & rail,Residential,0,0,0,5
+Road & rail,Industry & commerce,0,57.952682562337024,5.795268256233703,5
+Road & rail,Recreation areas,0,0,0,5
+Road & rail,Forest,0,0,0,5
+Seaports,Arable land,0,0,0,5
+Seaports,Permanent crops,0,0,0,5
+Seaports,Pastures,0,0,0,5
+Seaports,Agricultural areas,0,0,0,5
+Seaports,Residential,0,0,0,5
+Seaports,Industry & commerce,0,0,0,5
+Seaports,Recreation areas,0,0,0,5
+Seaports,Forest,0,0,0,5
+Airports,Arable land,0,0,0,5
+Airports,Permanent crops,0,0,0,5
+Airports,Pastures,0,0,0,5
+Airports,Agricultural areas,0,0,0,5
+Airports,Residential,0,0,0,5
+Airports,Industry & commerce,0,59.57880631349369,5.9578806313493695,5
+Airports,Recreation areas,0,0,0,5
+Airports,Forest,0,0,0,5
+Mine & dump sites,Arable land,0,0,0,5
+Mine & dump sites,Permanent crops,0,94.3312220636409,9.43312220636409,5
+Mine & dump sites,Pastures,0,0,0,5
+Mine & dump sites,Agricultural areas,0,0,0,5
+Mine & dump sites,Residential,0,37.790070187221346,3.779007018722135,5
+Mine & dump sites,Industry & commerce,0,4.663778188230804,0.46637781882308044,5
+Mine & dump sites,Recreation areas,7.75,3.8507163126524695,0.38507163126524696,5
+Mine & dump sites,Forest,0,0,0,5
+Fresh water,Arable land,0,0,0,5
+Fresh water,Permanent crops,0,0,0,5
+Fresh water,Pastures,0,0,0,5
+Fresh water,Agricultural areas,0,0,0,5
+Fresh water,Residential,0,0,0,5
+Fresh water,Industry & commerce,0,0,0,5
+Fresh water,Recreation areas,0,0,0,5
+Fresh water,Forest,0,0,0,5
+Marine water,Arable land,0,0,0,5
+Marine water,Permanent crops,0,0,0,5
+Marine water,Pastures,0,0,0,5
+Marine water,Agricultural areas,0,0,0,5
+Marine water,Residential,0,0,0,5
+Marine water,Industry & commerce,0,0,0,5
+Marine water,Recreation areas,0,0,0,5
+Marine water,Forest,0,0,0,5
